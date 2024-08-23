@@ -24,15 +24,14 @@ public class Amazon_screenshot_by_current_time
 	    TakesScreenshot t1=driver;
 			
 	    File source=t1.getScreenshotAs(OutputType.FILE);
-	    Date d=new Date();
-	     System.out.println(d.getTime());
-	     
-	     Date d1=new Date();
-	     System.out.println("Current Time--->"+d1);
-	  String time=   d1.toString();
-	  System.out.println(time);
+       Date d1=new Date();
+		
+		System.out.println("Current Time->"+d1);
+		String time=d1.toString().replace(":", "").replace(" ", "")+".png";
+		System.out.println(time);
+		
 	    
-	   File destination=new File("C:\\eclipse\\Selenium_proj\\src\\Screenshot\\amazoncurrentdate_time"+d1.getTime()+".png"
+	   File destination=new File("C:\\eclipse\\Selenium_proj\\src\\Screenshot\\amazoncurrentdate_time"+time+".png"
 			);
 		FileHandler.copy(source, destination);
 
